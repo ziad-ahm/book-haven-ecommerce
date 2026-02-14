@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+/*! header */
+.header {
+    background-color: #F3F4F6;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+
+.header img {
+    height: 60px;
+    width: auto;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.header li {
+    display: inline;
+}
+
+.header li i{
+    font-size: 25px;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    margin-right: 100px;
+    text-decoration: none;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.header nav a:hover {
+    color: #DB5408;
+    font-weight: 700;
+}
+
+
+/*! Bocks */
+
+.poplar-bocks {
+    background-color: #fefefe;
+    height: 400px;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.poplar-bocks .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #DB5408;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    margin-bottom: 35px;
+}
+
+/*! footer */
+
+.footer {
+    background-color: #ffffff;
+    color: black;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .social-icons {
+    text-align: right;
+}
+
+.footer img {
+    height: 60px;
+    width: auto;
+    margin-left: 15px;
+}
+
+.footer .social-icons a {
+    color: black;
+    margin: 0 10px;
+    font-size: 50px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #DB5408;
+}
+
+.footer-bottom hr {
+    border-top: 1px solid black;
+    margin: 15px 0;
+}
+
+.footer-bottom p {
+    margin: 10px 0px;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    justify-content: center;
+    display: flex;
+}
+
+
+.about-us {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+
+
+
