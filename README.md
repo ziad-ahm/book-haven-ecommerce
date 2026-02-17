@@ -7,7 +7,7 @@ The website allows users to browse books and view detailed pages for each book.
 
 ## 🚀 Live Demo
 
-🔗 [https://your-netlify-link.netlify.app](https://beamish-figolla-bc1a47.netlify.app/](https://beamish-figolla-bc1a47.netlify.app/)
+🔗 https://beamish-figolla-bc1a47.netlify.app
 
 ---
 
