@@ -1,158 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- google font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200..1000&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Css link -->
-        <link rel="icon" href="/imgs/logo.png">
-        <link rel="stylesheet" href="style.css">
-        <title>project E-commerce</title>                                                                                                                                                                                                                              
-    </head>
-    <body>
-        <!--! header -->    
-        <div class="header">
-            <a href="index.html"><img src="..//imgs/logo.png" alt="logo"></a>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200..1000&display=swap" rel="stylesheet">
 
-                    <li>
-                        <a href="Books page/books.html">Books</a>
-                    </li>
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-                    <li>
-                        <a href="#section-title">Popular-books</a>
-                    </li>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-                    <li>
-                        <a href="#contact-form">Contact us</a>
-                    </li>
+    <!-- CSS -->
+    <link rel="icon" href="imgs/logo.png">
+    <link rel="stylesheet" href="style.css">
 
-                    <li>
-                        <a  href="Sign in page/login.html">Sign-in</a>
-                    </li>
+    <title>Book Haven</title>
+</head>
 
-                    <li>
-                        <a href="index.html"><i class="fa-solid fa-cart-shopping"></i></a>
-                    </li>
+<body>
 
-                    <li>
-                        <a href="/track-order page/track-order.html" class="track-order-btn"><i class="fas fa-truck"></i> Track Order</a>
-                    </li>
-                </ul>
-            </nav>
+    <!-- Header -->
+    <div class="header">
+        <a href="index.html">
+            <img src="imgs/logo.png" alt="logo">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books-page/books.html">Books</a></li>
+                <li><a href="#section-title">Popular-books</a></li>
+                <li><a href="#contact-form">Contact us</a></li>
+                <li><a href="sign-in-page/login.html">Sign-in</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li>
+                    <a href="track-order-page/track-order.html" class="track-order-btn">
+                        <i class="fas fa-truck"></i> Track Order
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <div class="welcome-text">
+            <h1>Welcome to Book Haven</h1>
+            <p>Find your next great read at our book store</p>
+            <a class="shop-btn" href="books-page/books.html">Explore Now!</a>
         </div>
 
-        <!--! main section -->
-        <div class="welcome-section">
-
-            <div class="welcome-text">
-                <h1>Welcome to Book Haven</h1>
-                <p>Find your next great read at our book store</p>
-                <a class="shop-btn" href="books.html">Explore Now!</a>
-            </div>
-
-            <div class="welcome-section-img">
+        <div class="welcome-section-img">
             <img src="imgs/teaching-strategies-illustration-Photoroom.png" alt="welcome img">
-            </div>
-
         </div>
-        
-        <!--! poplar-bocks -->
-        <div class="container text-center my-5">
-            <h2 class="section-title">Popular Books</h2>
+    </div>
+
+    <!-- Popular Books -->
+    <div class="container text-center my-5" id="section-title">
+        <h2 class="section-title">Popular Books</h2>
+        <!--Row 1-->
         <div class="row">
-            <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="imgs/BOOKS IMG/Clean-Architecture.jpg" class="card-img-top" alt="Clean-Architecture-img">
-                <div class="card-body">
-                <h5 class="card-title">Clean Architecture</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                <a href="clean-Architecture.html" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            </div>
 
             <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="imgs/BOOKS IMG/Fundamentals-of-Database-Systems-768x951.jpg" class="card-img-top" alt="Fundamentals-of-Database-Systems">
-                <div class="card-body">
-                <h5 class="card-title">Fundamentals of Database Systems</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="card">
+                    <img src="imgs/BOOKS IMG/Clean-Architecture.jpg" class="card-img-top" alt="Clean Architecture">
+                    <div class="card-body">
+                        <h5 class="card-title">Clean Architecture</h5>
+                        <p class="card-text">Book about software architecture principles.</p>
+                        <a href="books-page/clean-Architecture.html" class="btn btn-primary">View</a>
+                    </div>
                 </div>
-            </div>
             </div>
 
             <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="imgs/BOOKS IMG/Grokking-Algorithms-205x275.jpg" class="card-img-top" alt="Grokking-Algorithms-img">
-                <div class="card-body">
-                <h5 class="card-title">Grokking Algorithms</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="card">
+                    <img src="imgs/BOOKS IMG/Fundamentals-of-Database-Systems-768x951.jpg" class="card-img-top" alt="Database Systems">
+                    <div class="card-body">
+                        <h5 class="card-title">Fundamentals of Database Systems</h5>
+                        <p class="card-text">Comprehensive database systems reference.</p>
+                        <a href="#" class="btn btn-primary">View</a>
+                    </div>
                 </div>
-            </div>
             </div>
 
             <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="imgs/BOOKS IMG/Linux-Basics-for-Hackers.webp" class="card-img-top" alt="Linux-Basics-for-Hackers-img">
-                <div class="card-body">
-                <h5 class="card-title">Linux Basics for Hackers</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="card">
+                    <img src="imgs/BOOKS IMG/Grokking-Algorithms-205x275.jpg" class="card-img-top" alt="Grokking Algorithms">
+                    <div class="card-body">
+                        <h5 class="card-title">Grokking Algorithms</h5>
+                        <p class="card-text">Visual guide to understanding algorithms.</p>
+                        <a href="#" class="btn btn-primary">View</a>
+                    </div>
                 </div>
             </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="imgs/BOOKS IMG/Linux-Basics-for-Hackers.webp" class="card-img-top" alt="Linux Basics">
+                    <div class="card-body">
+                        <h5 class="card-title">Linux Basics for Hackers</h5>
+                        <p class="card-text">Intro to Linux for cybersecurity beginners.</p>
+                        <a href="#" class="btn btn-primary">View</a>
+                    </div>
+                </div>
             </div>
+
         </div>
-        </div>
 
+        <!--Row 2-->
+        <div class="row">
 
-        <!--! contact-us -->
-        <div class="contact-us">
-
-            <h2 class="section-title">Contact Us</h2>
-
-            <form class="contact-form" method="post" >
-
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-
-            </form>
-        </div>
-        
-        <!--! footer -->
-        <div class="footer">
-            <!-- logo -->
-            <a href="indix.html"><img class="logo" src="imgs/logo.png" alt="logo"></a>
-            <!-- social-icons -->
-            <div class="social-icons">
-                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="imgs/BOOKS IMG/js-For-Kids.jpg" class="card-img-top" alt="JavaScript for Kids">
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript for Kids</h5>
+                        <p class="card-text">Fun introduction to JavaScript programming.</p>
+                        <a href="#" class="btn btn-primary">View</a>
+                    </div>
+                </div>
             </div>
-                    <a class="about-us" href="About-us.html">About Us</a>
+
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="imgs/BOOKS IMG/clean-code.jpg" class="card-img-top" alt="Clean Code">
+                    <div class="card-body">
+                        <h5 class="card-title">Clean Code</h5>
+                        <p class="card-text">Guide to writing clean, maintainable code.</p>
+                        <a href="#" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="imgs/BOOKS IMG/java.jpg" class="card-img-top" alt="Java Programming">
+                    <div class="card-body">
+                        <h5 class="card-title">Java Programming</h5>
+                        <p class="card-text">Complete guide to Java programming.</p>
+                        <a href="#" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="imgs/BOOKS IMG/OOP.jpg" class="card-img-top" alt="Object-Oriented Programming">
+                    <div class="card-body">
+                        <h5 class="card-title">Object-Oriented Programming</h5>
+                        <p class="card-text">Guide to understanding OOP concepts.</p>
+                        <a href="#" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
 
         </div>
-            <hr>
-                        <!-- footer-bottom -->
-        <div class="footer-bottom">
-            <p>Copyright 2025 © <strong>BookHaven</strong> Developed by Ziad Ahmad</p>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </div>
 
-    </body>
+    <!-- Contact -->
+    <div class="contact-us" id="contact-form">
+        <h2 class="section-title">Contact Us</h2>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="footer-left">
+            <a href="index.html">
+                <img src="imgs/logo.png" alt="logo">
+            </a>
+            <a class="about-us" href="About/about.html">About Us</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>Copyright 2025 © <strong>BookHaven</strong> Developed by Ziad Ahmad</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
 </html>

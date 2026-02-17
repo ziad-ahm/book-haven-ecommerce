@@ -43,7 +43,7 @@
     margin-right: 10px;
 }
 
-.header nav a:hover {
+.header li .active {
     color: #DB5408;
     font-weight: 700;
 }

@@ -131,7 +131,7 @@
     text-align: center;
 }
 
-.contact-us .section-title{
+.contact-us .section-title {
     font-size: 36px;
     font-weight: 700;
     color: #DB5408;
@@ -140,72 +140,100 @@
 
 .contact-form {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.contact-form input{
-    margin: 15px;
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
 }
 
-.contact-form button{
-    margin-top: 15px;
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #e66a30;
+    outline: none;
 }
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form button {
+    padding: 12px 30px;
+    background-color: #DB5408;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: #e66a30;
+    transform: scale(1.05);
+}
+
 
 /*! footer */
 
 .footer {
     background-color: #ffffff;
     color: black;
-    padding: 20px 10px;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* مسافة بين اللوجو و About Us */
+}
+
+.footer-left img {
+    height: 60px;
+    width: auto;
+}
+
+.about-us {
+    text-decoration: none;
+    color: #e66a30;
+    font-weight: 800;
 }
 
 .footer .social-icons {
-    text-align: right;
-}
-
-.footer img {
-    height: 60px;
-    width: auto;
-    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .footer .social-icons a {
     color: black;
-    margin: 0 10px;
-    font-size: 50px;
+    font-size: 30px; /* أصغر شوي */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer .social-icons a:hover {
-    color: #151ec1;
-}
-
-.footer-bottom hr {
-    border-top: 1px solid black;
-    margin: 15px 0;
-}
-
-.footer-bottom p {
-    margin: 10px 0px;
-    font-size: 14px;
+    color: #e66a30;
 }
 
 .footer-bottom {
-    justify-content: center;
-    display: flex;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    border-top: 1px solid black;
+    padding-top: 10px;
 }
-
-
-.about-us {
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-    margin-right: 10px;
-}
-
-
-
