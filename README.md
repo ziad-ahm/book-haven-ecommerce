@@ -43,3 +43,6 @@ This project was developed to strengthen skills in:
 * UI/UX Design Principles
 * Git & GitHub Version Control
 
+
+## Live Demo
+https://ziad-ahm.github.io/book-haven-ecommerce/
