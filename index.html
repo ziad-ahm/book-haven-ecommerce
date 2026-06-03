@@ -11,26 +11,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200..1000&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="icon" href="imgs/logo.png">
     <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="imgs/logo.png">
 
     <title>Book Haven</title>
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- ! Header -->
     <div class="header">
+
+        <span id="burgerMenu" onclick="openNav()">&#9776;</span>
+
+        <div class="navbar" id="navbar">
+            
+            <span class="close" onclick="closeNav()">&times;</span>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books-page/books.html">Books</a></li>
+                <li><a href="#section-title">Popular-books</a></li>
+                <li><a href="#contact-form">Contact us</a></li>
+            </ul>
+
+        </div>
+
+        <div id="overlay" onclick="closeNav()"></div>
+
+    
         <a href="index.html">
             <img src="imgs/logo.png" alt="logo">
         </a>
+
 
         <nav>
             <ul>
@@ -39,17 +59,34 @@
                 <li><a href="#section-title">Popular-books</a></li>
                 <li><a href="#contact-form">Contact us</a></li>
                 <li><a href="sign-in-page/login.html">Sign-in</a></li>
-                <li><a href="index.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+
+                <li><a onclick="openCart()"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                
                 <li>
-                    <a href="track-order-page/track-order.html" class="track-order-btn">
-                        <i class="fas fa-truck"></i> Track Order
-                    </a>
+                    <button onclick="darkMode()" class="btn btn-dark">🌙</button>
                 </li>
             </ul>
+
         </nav>
+
     </div>
 
-    <!-- Welcome Section -->
+    <!-- ! Welcome Section -->
+                <!-- Cart -->
+        <div class="cart" id="cartModal">
+
+            <div id="cartItems"></div>
+
+            <div class="cart-btn-container">
+                <button class="btn close-btn" onclick="closeCart()">Continue Shopping</button>
+                <button class="btn">Checkout</button>
+            </div>
+
+        </div>
+
+
+
+
     <div class="welcome-section">
         <div class="welcome-text">
             <h1>Welcome to Book Haven</h1>
@@ -65,117 +102,155 @@
     <!-- Popular Books -->
     <div class="container text-center my-5" id="section-title">
         <h2 class="section-title">Popular Books</h2>
-        <!--Row 1-->
-        <div class="row">
 
-            <div class="col-md-3 mb-4">
+
+            <div class="cardsContainer">
+                
                 <div class="card">
-                    <img src="imgs/BOOKS IMG/Clean-Architecture.jpg" class="card-img-top" alt="Clean Architecture">
-                    <div class="card-body">
-                        <h5 class="card-title">Clean Architecture</h5>
-                        <p class="card-text">Book about software architecture principles.</p>
-                        <a href="books-page/clean-Architecture.html" class="btn btn-primary">View</a>
+                    <img src="imgs/BOOKS IMG/Clean-Architecture.jpg" alt="Clean Architecture">
+
+                    <div class="cardDetails">
+                        <h2>Clean Architecture</h2>
+                        <p>Book about software architecture principles.</p>
+                        <h2>$12.99</h2>
+
+                        <div class="btnContainer">
+                            <a href="books-page/clean-Architecture.html" class="btn btn-primary">View</a>
+                            <button class="btn" onclick="addToCart('Clean Architecture', 'Clean-Architecture.jpg', '$12.99')">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3 mb-4">
                 <div class="card">
-                    <img src="imgs/BOOKS IMG/Fundamentals-of-Database-Systems-768x951.jpg" class="card-img-top" alt="Database Systems">
-                    <div class="card-body">
-                        <h5 class="card-title">Fundamentals of Database Systems</h5>
-                        <p class="card-text">Comprehensive database systems reference.</p>
-                        <a href="#" class="btn btn-primary">View</a>
+                    <img src="imgs/BOOKS IMG/Fundamentals-of-Database-Systems-768x951.jpg" alt="Database Systems">
+
+                    <div class="cardDetails">
+                        <h2>Fundamentals of Database Systems</h2>
+                        <p>Comprehensive database systems reference.</p>
+                        <h2>$21.99</h2>
+                        <div class="btnContainer">
+                            <a href="books-page/fundamentals-of-database-systems.html" class="btn btn-primary">View</a>
+                            <button class="btn" onclick="addToCart('Fundamentals of Database Systems', 'Fundamentals-of-Database-Systems-768x951.jpg', '$21.99')">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3 mb-4">
                 <div class="card">
-                    <img src="imgs/BOOKS IMG/Grokking-Algorithms-205x275.jpg" class="card-img-top" alt="Grokking Algorithms">
-                    <div class="card-body">
-                        <h5 class="card-title">Grokking Algorithms</h5>
-                        <p class="card-text">Visual guide to understanding algorithms.</p>
-                        <a href="#" class="btn btn-primary">View</a>
+                    <img src="imgs/BOOKS IMG/Grokking-Algorithms-205x275.jpg" alt="Grokking Algorithms">
+
+                    <div class="cardDetails">
+                        <h2>Grokking Algorithms</h2>
+                        <p>Visual guide to understanding algorithms.</p>
+                        <h2>$17.99</h2>
+                        <div class="btnContainer">
+                            <a href="books-page/grokking-algorithms.html" class="btn btn-primary">View</a>
+                            <button class="btn" onclick="addToCart('Grokking Algorithms', 'Grokking-Algorithms-205x275.jpg', '$17.99')">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3 mb-4">
                 <div class="card">
-                    <img src="imgs/BOOKS IMG/Linux-Basics-for-Hackers.webp" class="card-img-top" alt="Linux Basics">
-                    <div class="card-body">
-                        <h5 class="card-title">Linux Basics for Hackers</h5>
-                        <p class="card-text">Intro to Linux for cybersecurity beginners.</p>
-                        <a href="#" class="btn btn-primary">View</a>
+                    <img src="imgs/BOOKS IMG/Linux-Basics-for-Hackers.webp" alt="Linux Basics for Hackers">
+
+                    <div class="cardDetails">
+                        <h2>Linux Basics for Hackers</h2>
+                        <p>Intro to Linux for cybersecurity beginners.</p>
+                        <h2>$17.99</h2>
+                        <div class="btnContainer">
+                            <a href="books-page/linux-basics-for-hackers.html" class="btn btn-primary">View</a>
+                            <button class="btn" onclick="addToCart('Linux Basics for Hackers', 'Linux-Basics-for-Hackers.webp', '$17.99')">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
+
             </div>
 
-        </div>
 
-        <!--Row 2-->
-        <div class="row">
+            <div class="cardsContainer">
 
-            <div class="col-md-3 mb-4">
                 <div class="card">
-                    <img src="imgs/BOOKS IMG/js-For-Kids.jpg" class="card-img-top" alt="JavaScript for Kids">
-                    <div class="card-body">
-                        <h5 class="card-title">JavaScript for Kids</h5>
-                        <p class="card-text">Fun introduction to JavaScript programming.</p>
-                        <a href="#" class="btn btn-primary">View</a>
+                    <img src="imgs/BOOKS IMG/js-For-Kids.jpg" alt="JavaScript for Kids">
+
+                    <div class="cardDetails">
+                        <h2>JavaScript for Kids</h2>
+                        <p>Fun introduction to programming with JavaScript.</p>
+                        <h2>$14.99</h2>
+
+                        <div class="btnContainer">
+                            <a href="books-page/js-for-kids.html" class="btn btn-primary">View</a>
+                            <button class="btn" onclick="addToCart('JavaScript for Kids', 'js-For-Kids.jpg', '$14.99')">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3 mb-4">
                 <div class="card">
-                    <img src="imgs/BOOKS IMG/clean-code.jpg" class="card-img-top" alt="Clean Code">
-                    <div class="card-body">
-                        <h5 class="card-title">Clean Code</h5>
-                        <p class="card-text">Guide to writing clean, maintainable code.</p>
-                        <a href="#" class="btn btn-primary">View</a>
+                    <img src="imgs/BOOKS IMG/clean-code.jpg" alt="Clean Code">
+
+                    <div class="cardDetails">
+                        <h2>Clean Code</h2>
+                        <p>Guide to writing clean, maintainable code.</p>
+                        <h2>$12.99</h2>
+                        <div class="btnContainer">
+                            <a href="books-page/clean-code.html" class="btn btn-primary">View</a>
+                            <button class="btn" onclick="addToCart('Clean Code', 'clean-code.jpg', '$12.99')">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3 mb-4">
                 <div class="card">
-                    <img src="imgs/BOOKS IMG/java.jpg" class="card-img-top" alt="Java Programming">
-                    <div class="card-body">
-                        <h5 class="card-title">Java Programming</h5>
-                        <p class="card-text">Complete guide to Java programming.</p>
-                        <a href="#" class="btn btn-primary">View</a>
+                    <img src="imgs/BOOKS IMG/java.jpg" alt="Java Programming">
+
+                    <div class="cardDetails">
+                        <h2>Java Programming</h2>
+                        <p>Complete guide to Java programming.</p>
+                        <h2>$19.99</h2>
+                        <div class="btnContainer">
+                            <a href="books-page/java-programming.html" class="btn btn-primary">View</a>
+                            <button class="btn" onclick="addToCart('Java Programming', 'java.jpg', '$19.99')">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3 mb-4">
                 <div class="card">
-                    <img src="imgs/BOOKS IMG/OOP.jpg" class="card-img-top" alt="Object-Oriented Programming">
-                    <div class="card-body">
-                        <h5 class="card-title">Object-Oriented Programming</h5>
-                        <p class="card-text">Guide to understanding OOP concepts.</p>
-                        <a href="#" class="btn btn-primary">View</a>
+                    <img src="imgs/BOOKS IMG/OOP.jpg" alt="Object-Oriented Programming">
+
+                    <div class="cardDetails">
+                        <h2>Object-Oriented Programming</h2>
+                        <p>Guide to understanding OOP concepts.</p>
+                        <h2>$15.99</h2>
+                        <div class="btnContainer">
+                            <a href="books-page/oop.html" class="btn btn-primary">View</a>
+                            <button class="btn" onclick="addToCart('Object-Oriented Programming', 'OOP.jpg', '$15.99')">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
+            
             </div>
-
+            
         </div>
     </div>
 
-    <!-- Contact -->
-    <div class="contact-us" id="contact-form">
+    <!-- ! Contact -->
+    <form class="contact-form" id="contactForm">    
         <h2 class="section-title">Contact Us</h2>
 
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
 
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h3>Message Sent 🎉</h3>
+                <p>Thank you for contacting us!</p>
+            </div>
+        </div>
+
+    </form>
+
+    
+    <!-- ! footer -->
     <div class="footer">
         <div class="footer-left">
             <a href="index.html">
@@ -184,18 +259,21 @@
             <a class="about-us" href="About/about.html">About Us</a>
         </div>
 
-        <div class="social-icons">
-            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
+        <div class="sideNav">
+            <a href="http://instagram.com/" id="instagram"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="http://facebook.com/" id="facebook"><i class="fab fa-facebook-f"></i> FaceBook</a>
+            <a href="mailto:info@bookhaven.com" id="email"><i class="fa fa-envelope"></i> Email</a>
         </div>
+
     </div>
 
     <div class="footer-bottom">
         <p>Copyright 2025 © <strong>BookHaven</strong> Developed by Ziad Ahmad</p>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="main.js"></script> 
 
 </body>
 </html>

@@ -10,15 +10,14 @@
     height: 70px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between; /* أهم تغيير */
+    padding: 0 40px; /* بدل المسافات العشوائية */
 }
 
 .header img {
     height: 60px;
-    width: auto;
-    margin-left: 15px;
-    margin-top: 5px;
+    margin-right: 500px;
 }
 
 .header li {
@@ -29,23 +28,28 @@
     font-size: 25px;
 }
 
+
 .header nav {
     display: flex;
     align-items: center;
-    margin-right: 100px;
-    text-decoration: none;
+    margin: 0; /* شيل margin-right */
+}
+
+.header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* بدل margin بين اللينكات */
+    list-style: none;
 }
 
 .header nav a {
     text-decoration: none;
     color: black;
-    font-size: 20px;
-    margin-right: 10px;
+    font-size: 18px;
 }
 
 .header nav a:hover {
     color: #DB5408;
-    font-weight: 700;
 }
 
 /*! welcome section */
@@ -213,27 +217,362 @@
     font-weight: 800;
 }
 
-.footer .social-icons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.footer .social-icons a {
-    color: black;
-    font-size: 30px; /* أصغر شوي */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer .social-icons a:hover {
-    color: #e66a30;
-}
-
 .footer-bottom {
     text-align: center;
     margin-top: 15px;
     font-size: 14px;
     border-top: 1px solid black;
     padding-top: 10px;
+}
+
+/*! SideNav */
+
+.sideNav {
+    position: fixed;
+    top: 85%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+
+.sideNav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 180px;
+    padding: 10px;
+    margin: 10px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 25px 0 0 25px;
+
+    transform: translateX(140px); /* يخفي النص ويظهر الأيقونة بس */
+    transition: 0.40s;
+}
+
+/* عند الـ hover يظهر كله */
+.sideNav a:hover {
+    transform: translateX(0);
+}
+
+/* الأيقونات */
+.sideNav i {
+    font-size: 20px;
+    min-width: 30px;
+    text-align: center;
+}
+
+#twitter {
+    background-color: #1DA1F2;
+}
+
+#instagram {
+    background: linear-gradient(45deg, #feda75, #d62976, #962fbf, #4f5bd5);
+}
+
+#facebook {
+    background-color: #3b5998;
+}
+
+#linkedin {
+    background-color: #0077b5;
+}
+
+#github {
+    background-color: #171515;
+}
+
+#email {
+    background-color: #BB001B;
+}
+
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 350px;
+    margin: 15% auto;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.close-btn {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+    color: red;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+/* Burger Button */
+#burgerMenu {
+    font-size: 32px;
+    cursor: pointer;
+    color: #be4600;
+    margin: auto 20px;
+    z-index: 10001;
+}
+
+/* Overlay */
+#overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9998;
+}
+
+/* Side Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100vh;
+    width: 260px;
+    background-color: #00107a;
+    overflow-x: hidden;
+    transition: 0.4s;
+    z-index: 9999;
+}
+
+.navbar ul {
+    margin: 100px 30px;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar li {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+
+
+
+
+
+
+
+
+
+.cardsContainer {
+    display: grid;
+    padding: 40px;
+    margin: auto;
+    width: 95%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.card{
+    background-color: #0301451c;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px #03014533;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.card img{
+    border-radius: 20px 20px 0px 0px;
+    width: 100%;
+    height: 300px;
+
+}
+
+.cardDetails{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+}
+
+.btnContainer{
+    margin-top: auto;
+    text-align: center;
+}
+
+
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    background-color: #fffdfa;
+    height: 100vh;
+    width: 400px;
+    box-shadow: -10px 0px 20px #0301453f;
+    transition: 0.5s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#cartItems {
+    margin-bottom: 120px; /* عشان الأزرار متغطيش عليه */
+}
+
+
+#cart{
+    position: absolute;
+    top: 40px ; /*بعيد 40 من فوق */
+    right: 40px; /*بعيد 40 من اليمين */
+}
+
+.cartItem /*ده شكل كل منتج جوه السلة*/ {
+    display: flex;/*يخلي صورة المنتج + التفاصيل جنب بعض*/
+    padding-bottom: 10px; /*مسافة داخلية تحت العنصر*/
+    margin-bottom: 20px; /*مسافة بين المنتجات وبعضها*/
+    border-bottom: 2px solid #03014553; /*خط تحت كل منتج للفصل بينهم*/
+}
+
+.cartItem img{
+    width: 120px;/*بيحدد حجم صورة المنتج داخل السلة*/
+}
+
+.cartDetails{
+    display: flex;/*يخلي الاسم والسعر جنب بعض*/
+    width: 100%;
+    justify-content: space-between;/*الاسم على الشمال والسعر على اليمين*/
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+.open{
+    right: 0 !important;/*دي بتفتح السلة cart*/
+}
+
+.cart-btn-container {
+    gap: 20px;/*مسافة بين الزرين*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px !important;
+    position: sticky;
+    bottom: 0;
+    background: #fffdfa;
+    padding: 10px;
+}
+
+.cart-btn-container .btn {
+    width: auto;
+    cursor: pointer;
+}
+
+.cart-btn-container .close-btn {
+    background-color: #fffdfa;
+    color: #030145;
+    border: 2px solid #030145;
+}
+
+
+.left button,
+.btn {
+    background-color: #DB5408;
+    color: #fffdfa;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 18px;
+    transition: 0.4s ease;/*حجم + حركة smooth*/
+    margin-right : 10px;
+}
+
+.left button:hover {
+    background-color: #fffdfa;
+    color: #DB5408;
+    border: 1px solid #DB5408;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.dark {
+    background-color: #111;
+    color: white;
+}
+
+.dark .header,
+.dark .footer,
+.dark .poplar-bocks,
+.dark .contact-us,
+.dark .welcome-section {
+    background-color: #111;
+    color: white;
+}
+
+.dark .header nav a,
+.dark .welcome-section h1,
+.dark .welcome-section p,
+.dark .footer,
+.dark .footer a,
+.dark .section-title {
+    color: white;
+}
+
+.dark .card {
+    background-color: #222;
+    color: white;
+    box-shadow: 10px 10px 20px #000;
+}
+
+.dark .modal-content,
+.dark .cart,
+.dark .cart-btn-container {
+    background-color: #222;
+    color: white;
+}
+
+.dark .contact-form input,
+.dark .contact-form textarea {
+    background-color: #222;
+    color: white;
+    border: 1px solid #555;
+}
+
+.dark .contact-form input::placeholder,
+.dark .contact-form textarea::placeholder {
+    color: #aaa;
 }

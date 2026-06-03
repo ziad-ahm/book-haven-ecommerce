@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -10,15 +11,14 @@
     height: 70px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between; /* أهم تغيير */
+    padding: 0 40px; /* بدل المسافات العشوائية */
 }
 
 .header img {
     height: 60px;
-    width: auto;
-    margin-left: 15px;
-    margin-top: 5px;
+    margin-right: 500px;
 }
 
 .header li {
@@ -29,75 +29,341 @@
     font-size: 25px;
 }
 
+
 .header nav {
     display: flex;
     align-items: center;
-    margin-right: 100px;
-    text-decoration: none;
+    margin: 0; /* شيل margin-right */
+}
+
+.header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* بدل margin بين اللينكات */
+    list-style: none;
 }
 
 .header nav a {
     text-decoration: none;
     color: black;
-    font-size: 20px;
-    margin-right: 10px;
+    font-size: 18px;
 }
 
 .header nav a:hover {
     color: #DB5408;
-    font-weight: 700;
 }
 
-/*! main*/
-img {
-    height: 300px;
-    width: auto;
-    padding: 100px;
+/* PRODUCT */
+.section {
+    display: flex;
+    gap: 60px;
+    padding: 60px;
+    align-items: center;
 }
+
+.product-image img {
+    width: 320px;
+}
+
+.product-info h1 {
+    font-size: 32px;
+}
+
+.price {
+    color: #DB5408;
+    margin: 15px 0;
+}
+
+.actions .btn {
+    background: #DB5408;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.actions .buy {
+    background: black;
+}
+
+/* SLIDER */
+.slider-wrapper {
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    overflow: hidden;
+}
+
+.slides img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
 
 /*! footer */
 
 .footer {
     background-color: #ffffff;
     color: black;
-    padding: 20px 10px;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.footer .social-icons {
-    text-align: right;
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* مسافة بين اللوجو و About Us */
 }
 
-.footer img {
+.footer-left img {
     height: 60px;
     width: auto;
-    margin-left: 15px;
 }
 
-.footer .social-icons a {
-    color: black;
-    margin: 0 10px;
-    font-size: 50px;
+.about-us {
     text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer .social-icons a:hover {
-    color: #DB5408;
-}
-
-.footer-bottom hr {
-    border-top: 1px solid black;
-    margin: 15px 0;
-}
-
-.footer-bottom p {
-    margin: 10px 0px;
-    font-size: 14px;
+    color: #e66a30;
+    font-weight: 800;
 }
 
 .footer-bottom {
-    justify-content: center;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    border-top: 1px solid black;
+    padding-top: 10px;
+}
+
+/*! SideNav */
+
+.sideNav {
+    position: fixed;
+    top: 85%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+
+.sideNav a {
     display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 180px;
+    padding: 10px;
+    margin: 10px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 25px 0 0 25px;
+
+    transform: translateX(140px); /* يخفي النص ويظهر الأيقونة بس */
+    transition: 0.40s;
+}
+
+/* عند الـ hover يظهر كله */
+.sideNav a:hover {
+    transform: translateX(0);
+}
+
+/* الأيقونات */
+.sideNav i {
+    font-size: 20px;
+    min-width: 30px;
+    text-align: center;
+}
+
+#twitter {
+    background-color: #1DA1F2;
+}
+
+#instagram {
+    background: linear-gradient(45deg, #feda75, #d62976, #962fbf, #4f5bd5);
+}
+
+#facebook {
+    background-color: #3b5998;
+}
+
+#linkedin {
+    background-color: #0077b5;
+}
+
+#github {
+    background-color: #171515;
+}
+
+#email {
+    background-color: #BB001B;
+}
+
+
+.slider-wrapper{
+position: relative;
+width: 60%;
+margin: auto;
+height: 70vh;
+}
+
+.slides-container {
+height: 100%;
+width: 100%;
+display: flex;
+list-style: none;
+padding: 0;
+overflow: scroll;
+scroll-behavior: smooth;
+}
+
+.slide {
+width: 100%;
+height: 100%;
+flex: 1 0 auto;
+}
+
+.slide-arrow {
+position: absolute;
+display: flex;
+top: 0;
+bottom: 0;
+margin: auto;/*يخلي الزرار في منتصف السلايدر تمامًا*/
+height: 65px;
+background-color: white;
+border: none;/*يشيل الإطار الافتراضي للزرار*/
+width: 30px;
+font-size: 3rem;/*حجم السهم كبير وواضح*/
+padding: 0;/*يشيل المسافات الداخلية الافتراضية*/
+cursor: pointer;
+opacity: 0.5;/*The opacity is 50%. It means:
+The element is semi-transparent, so it looks lighter and not fully visible.*/
+transition: opacity 100ms;/*Any change in opacity happens:smoothly over 0.1 seconds*/
+}
+
+.slide-arrow:hover {
+opacity: 1;/*Make the element fully opaque (100% visible), so the button becomes completely clear and strong.*/
+}
+
+#slide-arrow-prev {
+left: 0;
+padding-left: 4px;/*It adds a small inner space on the left side===>to move the arrow slightly away from the edge and make it look more visually balanced.*/
+border-radius: 0 2rem 2rem 0;
+}
+
+#slide-arrow-next {
+right: 0;
+padding-left: 10px;
+border-radius: 2rem 0 0 2rem;
+}
+
+.slide img {
+height: 100%;
+}
+
+
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    background-color: #fffdfa;
+    height: 100vh;
+    width: 400px;
+    box-shadow: -10px 0px 20px #0301453f;
+    transition: 0.5s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#cartItems {
+    margin-bottom: 120px; /* عشان الأزرار متغطيش عليه */
+}
+
+
+#cart{
+    position: absolute;/*يتحرك بحرية داخل الصفحة*/
+    top: 40px ; /*بعيد 40 من فوق */
+    right: 40px; /*بعيد 40 من اليمين */
+}
+
+.cartItem /*ده شكل كل منتج جوه السلة*/ {
+    display: flex;/*يخلي صورة المنتج + التفاصيل جنب بعض*/
+    padding-bottom: 10px; /*مسافة داخلية تحت العنصر*/
+    margin-bottom: 20px; /*مسافة بين المنتجات وبعضها*/
+    border-bottom: 2px solid #03014553; /*خط تحت كل منتج للفصل بينهم*/
+}
+
+.cartItem img{
+    width: 120px;/*بيحدد حجم صورة المنتج داخل السلة*/
+}
+
+.cartDetails{
+    display: flex;/*يخلي الاسم والسعر جنب بعض*/
+    width: 100%;
+    justify-content: space-between;/*الاسم على الشمال والسعر على اليمين*/
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+.open{
+    right: 0 !important;/*دي بتفتح السلة cart*/
+}
+
+.cart-btn-container {
+    gap: 20px;/*مسافة بين الزرين*/
+    display: flex;/*يخلي الزرين جنب بعض*/
+    align-items: center;/*Center the buttons vertically*/
+    justify-content: center;/*Center the buttons horizontally*/
+    padding: 10px !important;
+   /*padding = مسافة داخلية حوالين المحتوى
+!important = “إجبار المتصفح يستخدمه مهما حصل”*/
+    position: sticky;
+    bottom: 0;
+    background: #fffdfa;
+    padding: 10px;
+}
+
+.cart-btn-container .btn/*يعني أزرار الكارت كلها*/{
+    width: auto;/*معناها:
+الزرار ياخد حجمه الطبيعي حسب المحتوى
+مش يتمدد على قد العرض كله*/
+    cursor: pointer;
+}
+
+.cart-btn-container .close-btn /*ده زرار:
+Continue Shopping*/{
+    background-color: #fffdfa;
+    color: #030145;
+    border: 2px solid #030145;
+/*1) 2px
+دي سُمك الإطار
+2px = رفيع
+لو زوّدتي الرقم = يبقى أسمك
+2) solid
+دي نوع الخط
+معناها:
+خط واحد مستقيم ومش مقطع
+3) color 
+*/
 }
